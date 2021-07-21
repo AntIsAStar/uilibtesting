@@ -3,7 +3,6 @@ function library:CreateMain()
 	local ScreenGui = Instance.new("ScreenGui")
 	local Frame = Instance.new("Frame")
 	local UIListLayout = Instance.new("UIListLayout")
-	local TextButton = Instance.new("TextButton")
 
 	ScreenGui.Parent = game:GetService("CoreGui")
 
@@ -17,6 +16,7 @@ function library:CreateMain()
 	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 	local epicui = {}
 	function epicui:CreateButton(name)
+		local TextButton = Instance.new("TextButton")
 		TextButton.Parent = Frame
 		TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		TextButton.Size = UDim2.new(0.444444448, 0, 0.200000003, 0)
