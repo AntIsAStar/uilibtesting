@@ -1,9 +1,16 @@
 local library = {}
 function library:CreateMain()
+
+	local ScreenGui = Instance.new("ScreenGui")
 	local Frame = Instance.new("Frame")
 	local UIListLayout = Instance.new("UIListLayout")
 	local TextButton = Instance.new("TextButton")
-	Frame.Parent = game:GetService("CoreGui")
+
+	--Properties:
+
+	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+	Frame.Parent = ScreenGui
 	Frame.BackgroundColor3 = Color3.fromRGB(231, 68, 120)
 	Frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
 	Frame.Position = UDim2.new(0.395248383, 0, 0.208768278, 0)
@@ -11,18 +18,15 @@ function library:CreateMain()
 
 	UIListLayout.Parent = Frame
 	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	
 	local testing = {}
-	function testing:NewButton(name)
-		TextButton.Name = name
+	function testing:CreateButton(name)
 		TextButton.Parent = Frame
 		TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		TextButton.Size = UDim2.new(0.444444448, 0, 0.200000003, 0)
 		TextButton.Font = Enum.Font.SourceSans
+		TextButton.Text = name
 		TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 		TextButton.TextSize = 14.000
 	end
-	return testing;
+	return library; 
 end
-
-return library;
