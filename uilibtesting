@@ -8,7 +8,7 @@ function library:CreateMain()
 
 	--Properties:
 
-	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	ScreenGui.Parent = game:GetService("CoreGui")
 
 	Frame.Parent = ScreenGui
 	Frame.BackgroundColor3 = Color3.fromRGB(231, 68, 120)
